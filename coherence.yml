@@ -1,0 +1,9 @@
+backend:
+  type: backend
+  prod: [".", "/opt/venv/bin/activate", "&&", "uvicorn", "app:app", "--port=$PORT", "--host=0.0.0.0", "--reload"]
+  dev: [".", "/opt/venv/bin/activate", "&&", "uvicorn", "app:app", "--port=$PORT", "--host=0.0.0.0", "--reload"]
+  resources:
+  - name: db1
+    engine: postgres
+    version: 15
+    type: database
